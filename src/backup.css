@@ -1,0 +1,88 @@
+.backup-page {
+  display: grid;
+  gap: 18px;
+}
+
+.backup-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.backup-actions button {
+  align-items: center;
+  display: inline-flex;
+  gap: 7px;
+}
+
+.backup-message {
+  background: #e8f5ee;
+  border: 1px solid #b7dfc8;
+  border-radius: 10px;
+  color: #176b3a;
+  padding: 12px 15px;
+  word-break: break-word;
+}
+
+.backup-summary {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.backup-summary .panel {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  padding: 18px;
+}
+
+.backup-summary svg {
+  color: #16844d;
+  font-size: 30px;
+  grid-row: span 2;
+}
+
+.backup-summary span,
+.backup-locations label,
+.backup-history td small {
+  color: #67746c;
+  font-size: 12px;
+}
+
+.backup-summary b {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.backup-locations {
+  display: grid;
+  gap: 8px;
+}
+
+.backup-locations code {
+  background: #f3f6f4;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 8px;
+  overflow-wrap: anywhere;
+  padding: 10px;
+}
+
+.backup-locations small {
+  color: #67746c;
+}
+
+.backup-history td small {
+  display: block;
+  margin-top: 3px;
+  max-width: 640px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .backup-summary { grid-template-columns: 1fr; }
+  .backup-actions { align-items: stretch; flex-direction: column; }
+}

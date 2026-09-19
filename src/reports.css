@@ -1,0 +1,89 @@
+.report-actions,
+.report-filter,
+.period-tabs {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.report-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #d0dbd5;
+  background: #fff;
+  border-radius: 8px;
+  padding: 9px 13px;
+  cursor: pointer;
+}
+.report-actions button.primary {
+  background: #169f6d;
+  color: #fff;
+  border: 0;
+}
+.report-filter {
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.report-filter label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.report-filter input {
+  width: 170px;
+}
+.period-tabs button {
+  border: 0;
+  border-radius: 8px;
+  padding: 9px 15px;
+  background: #edf2ef;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+.period-tabs button.active {
+  background: #169f6d;
+  color: #fff;
+}
+.report-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.report-sections .summary {
+  padding: 6px 0;
+}
+.report-table {
+  margin-bottom: 15px;
+}
+.empty.compact {
+  padding: 25px 10px;
+}
+@media (max-width: 1050px) {
+  .report-sections {
+    grid-template-columns: 1fr;
+  }
+}
+@media print {
+  .sidebar,
+  header,
+  .notice,
+  .report-actions,
+  .report-filter {
+    display: none !important;
+  }
+  .app-shell {
+    display: block;
+  }
+  .workspace {
+    padding: 0;
+  }
+  .reports-page {
+    color: #000;
+  }
+  .panel,
+  .metric {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+}
