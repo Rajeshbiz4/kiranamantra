@@ -1,0 +1,258 @@
+:root {
+  --km-primary: #12845d;
+  --km-primary-dark: #103d32;
+  --km-accent: #f0a93a;
+  --km-surface: #fff;
+  --km-border: #dce7e1;
+  --km-shadow: 0 10px 30px rgba(20, 65, 51, 0.07);
+}
+body {
+  background: #f3f7f5;
+}
+.app-shell main {
+  position: relative;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(246, 250, 248, 0.96),
+      rgba(239, 246, 242, 0.94)
+    ),
+    url("/kirana-watermark.svg") center/520px repeat;
+}
+.sidebar {
+  background: linear-gradient(180deg, #123d33 0%, #0e3028 100%);
+  box-shadow: 8px 0 28px rgba(12, 47, 38, 0.12);
+  position: relative;
+  z-index: 2;
+}
+.sidebar::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 210px;
+  background: url("/kirana-watermark.svg") center/260px;
+  opacity: 0.08;
+  pointer-events: none;
+}
+.sidebar nav,
+.sidebar .offline,
+.sidebar > button {
+  position: relative;
+  z-index: 1;
+}
+.sidebar nav button {
+  transition: all 0.18s ease;
+}
+.sidebar nav button:hover {
+  transform: translateX(3px);
+}
+.sidebar nav button.active {
+  background: linear-gradient(
+    90deg,
+    rgba(35, 190, 133, 0.28),
+    rgba(255, 255, 255, 0.08)
+  );
+  box-shadow: inset 3px 0 #55e1ac;
+}
+.sidebar-store-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 11px;
+  padding: 4px;
+}
+.app-default-logo { object-fit: cover; object-position: center; padding: 0; }
+.profile {
+  overflow: hidden;
+  border: 2px solid #d8f3e8 !important;
+  box-shadow: 0 4px 12px rgba(16, 90, 65, 0.18);
+}
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.workspace {
+  position: relative;
+  z-index: 1;
+}
+.panel,
+.metric,
+.user-card,
+.report-card {
+  border-color: rgba(205, 221, 213, 0.9);
+  box-shadow: var(--km-shadow);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+.metric:hover,
+.user-card:hover,
+.report-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(20, 65, 51, 0.11);
+}
+.metric {
+  position: relative;
+  overflow: hidden;
+  padding: 18px 18px 17px;
+}
+.metric::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: -25px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(25, 173, 120, 0.07);
+}
+.metric-icon {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #e7f7f0;
+  color: #11835c;
+  display: grid;
+  place-items: center;
+}
+.metric-icon svg {
+  font-size: 20px;
+}
+.metric span {
+  padding-right: 42px;
+}
+.metric b {
+  letter-spacing: -0.4px;
+}
+.panel h3 {
+  font-size: 15px;
+  color: #243c34;
+}
+.page-actions h2 {
+  font-size: 21px;
+  letter-spacing: -0.25px;
+}
+button.primary {
+  background: linear-gradient(135deg, #18a873, #11865d);
+  box-shadow: 0 6px 16px rgba(18, 143, 98, 0.2);
+  transition: all 0.18s ease;
+}
+button.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 19px rgba(18, 143, 98, 0.27);
+}
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(23, 170, 116, 0.22);
+  outline-offset: 2px;
+}
+table thead {
+  background: #f5f9f7;
+}
+tbody tr {
+  transition: background 0.14s ease;
+}
+tbody tr:hover {
+  background: #f4faf7;
+}
+.notice {
+  position: fixed;
+  right: 25px;
+  top: 72px;
+  z-index: 50;
+  min-width: 310px;
+  box-shadow: 0 12px 35px rgba(14, 80, 58, 0.16);
+  animation: notice-in 0.25s ease;
+}
+.stock-alert {
+  box-shadow: 0 8px 22px rgba(150, 101, 8, 0.08);
+}
+.login-page {
+  background:
+    linear-gradient(135deg, rgba(14, 61, 49, 0.96), rgba(6, 137, 93, 0.94)),
+    url("/login-grocery.svg") center left/760px no-repeat;
+}
+.login-hero {
+  position: relative;
+}
+.login-hero::after {
+  content: "Offline • Fast • Secure";
+  margin-top: 28px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #bce9d8;
+}
+.login-card {
+  box-shadow: -25px 0 60px rgba(5, 40, 29, 0.18);
+}
+.login-card input {
+  padding: 12px;
+}
+.billing-layout .panel {
+  backdrop-filter: blur(4px);
+}
+.scanner-ready {
+  background: #e7f8f1;
+  padding: 3px 7px;
+  border-radius: 99px;
+}
+.suggestions {
+  box-shadow: 0 16px 42px rgba(15, 70, 53, 0.16);
+}
+.quantity button:hover,
+.icon-btn:hover,
+.stock-adjust button:hover {
+  background: #dff4eb;
+}
+.danger-text {
+  background: #fff1f1;
+  border-radius: 5px;
+  padding: 4px;
+}
+.empty::before {
+  content: "◌";
+  display: block;
+  font-size: 30px;
+  color: #9ab3a8;
+  margin-bottom: 8px;
+}
+@keyframes notice-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 1200px) {
+  .app-shell {
+    grid-template-columns: 210px 1fr;
+  }
+  .workspace {
+    padding: 18px;
+  }
+  .metrics {
+    gap: 10px;
+  }
+  .metric {
+    padding: 15px;
+  }
+}
+@media print {
+  .app-shell main {
+    background: #fff;
+  }
+  .panel,
+  .metric {
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,1 @@
+import{describe,expect,it}from"vitest";import{parseCsv,toCsv}from"./reporting";describe("CSV utilities",()=>{it("escapes commas and quotes",()=>expect(toCsv([{name:'A, "B"',stock:2}])).toContain('"A, ""B"""'));it("parses quoted CSV",()=>expect(parseCsv('name,stock\n"Rice, Premium",10')[0]).toEqual({name:"Rice, Premium",stock:"10"}))});
